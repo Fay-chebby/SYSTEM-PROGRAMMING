@@ -1,0 +1,27 @@
+1. Data Structure Design:
+Define a structure to represent each person's contact information, including first name, last name, and telephone number.
+Testing: Verify that the structure correctly represents the required fields without errors. Ensure all fields are accessible and accurately defined.
+
+2. Menu System Design:
+Design a menu system to allow users to interact with the program, including options to add, delete, update, and display contact information.
+Testing: Interact with the menu to ensure all options are displayed correctly. Test each option to confirm it leads to the corresponding functionality.
+
+3. Adding a Person:
+Implement the functionality to add a new person's contact information, storing it in the data structure.
+Testing: Add multiple entries and verify they are stored accurately. Test for the program's capacity limit of 12 entries. Ensure proper handling of edge cases such as empty or invalid inputs.
+
+4. Deleting a Person:
+Implement the functionality to delete a person's information based on their last name.
+Testing: Add entries and delete specific ones. Confirm that the correct entry is removed each time. Test for edge cases like attempting to delete a non-existent entry or the last remaining entry.
+
+5. Updating Information:
+Implement the functionality to update a person's information, replacing old data with new details.
+Testing: Update information of existing entries. Verify that the old information is replaced correctly. Test for edge cases such as updating information for a non-existent entry.
+
+6. Displaying All Entries:
+Implement the functionality to display all stored contact information.
+Testing: Add multiple entries and display them all. Confirm that all entries are listed correctly and in the expected format. Test for edge cases like displaying entries when there are none or after some have been deleted.
+
+7. Input Validation and Error Handling:
+Implement input validation to handle invalid user inputs and error handling to gracefully manage unexpected scenarios.
+Testing: Provide invalid inputs and ensure the program handles them properly. Verify that the program prompts the user for correct inputs when necessary. Test for edge cases like empty inputs or inputs exceeding allowed length.

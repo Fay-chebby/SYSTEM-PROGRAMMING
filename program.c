@@ -27,3 +27,7 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+/*The comple time error in the code is that the vvariable declarations are declared on separate lines without proper syntax.*/
+
+/*The run time errors are division by 0 and the data typed of the variable declarations are not the same.*/
