@@ -35,4 +35,12 @@ int main(int argc, char *argv[]) {
 return 0;
 }
 
-
+/*
+MAIN FUNCTION DECLARATION LINE: - Variable type not declared for function (Syntax error)
+*/
+/*
+IF ELSE STATEMENT DECLARATION LINE: - Lack of else condition statement (Logic Error) hence program always breaks
+*/
+/*
+COUNT VARIABLE INITIALIZATION LINE: - Incorrect variable value for intilization. Count variable should initialize with '1' to allow it to satisfy the condition of third if statement
+*/
