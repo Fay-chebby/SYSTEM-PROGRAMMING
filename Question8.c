@@ -7,12 +7,15 @@ int main(){
 
      printf("Please enter your number:");
      scanf("%d" ,&n);
+     
 
     if(n % 2 != 0){
-     closest_num = (int)sqrt(n) + 1;
+     closest_num = (int)sqrt(n) + 0.5;
+     closest_num = closest_num * closest_num;
     }
     else{
-        closest_num = (int)sqrt(n);
+        closest_num = (int)sqrt(n + 1) + 0.5;
+        closest_num = closest_num * closest_num;
     }
 
      printf("Closest integer with a whole number is:%d\n", closest_num);
