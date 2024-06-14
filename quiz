@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+int find_closest_square(int num) {
+    double sqrt_num = sqrt(num);
+    
+    int lower_int = (int)sqrt_num;
+    int upper_int = lower_int + 1;
+  
+    int lower_square = lower_int * lower_int;
+    int upper_square = upper_int * upper_int;
+  
+    if (abs(num - lower_square) <= abs(num - upper_square)) {
+        return lower_square;
+    } else {
+        return upper_square;
+    }
+}
+
+int main() {
+    int user_input;
+    printf("Enter a positive integer: ");
+    while (scanf("%d", &user_input) != 1 || user_input < 1) {
+        printf("Invalid input. Please enter a positive integer: ");
+        while (getchar() != '\n');
+    }
+
+    int closest_square = find_closest_square(user_input);
+    
+    printf("The closest integer to %d having a whole number square root is %d.\n", user_input, closest_square);
+    
+    return 0;
+}
