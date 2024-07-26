@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 #define MAX_CONTACTS 12
 #define NAME_LEN 50
@@ -15,6 +16,44 @@ void initializeContacts(Contact contacts[], int *size) {
     *size = 0;
 }
 
+int isValidName(const char *name) {
+    for (int i = 0; name[i] != '\0'; i++) {
+        if (!isalpha(name[i])) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int isValidPhoneNumber(const char *phoneNumber) {
+    for (int i = 0; phoneNumber[i] != '\0'; i++) {
+        if (!isdigit(phoneNumber[i])) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int getValidChoice() {
+    char choice[10];
+    int valid = 0;
+
+    while (!valid) {
+        printf("Enter your choice: ");
+        scanf("%s", choice);
+
+        valid = 1;
+        for (int i = 0; choice[i] != '\0'; i++) {
+            if (!isdigit(choice[i])) {
+                valid = 0;
+                printf("Invalid choice. Please enter digits only.\n");
+                break;
+            }
+        }
+    }
+    return atoi(choice);
+}
+
 void addContact(Contact contacts[], int *size) {
     if (*size >= MAX_CONTACTS) {
         printf("Contact list is full.\n");
@@ -22,10 +61,22 @@ void addContact(Contact contacts[], int *size) {
     }
     printf("Enter first name: ");
     scanf("%s", contacts[*size].firstName);
+    if (!isValidName(contacts[*size].firstName)) {
+        printf("Invalid first name. Only alphabetic characters are allowed.\n");
+        return;
+    }
     printf("Enter last name: ");
     scanf("%s", contacts[*size].lastName);
+    if (!isValidName(contacts[*size].lastName)) {
+        printf("Invalid last name. Only alphabetic characters are allowed.\n");
+        return;
+    }
     printf("Enter phone number: ");
     scanf("%s", contacts[*size].phoneNumber);
+    if (!isValidPhoneNumber(contacts[*size].phoneNumber)) {
+        printf("Invalid phone number. Only digits are allowed.\n");
+        return;
+    }
     (*size)++;
 }
 
@@ -72,10 +123,22 @@ void updateContact(Contact contacts[], int *size) {
             strcmp(contacts[i].lastName, lastName) == 0) {
             printf("Enter new first name: ");
             scanf("%s", contacts[i].firstName);
+            if (!isValidName(contacts[i].firstName)) {
+                printf("Invalid first name. Only alphabetic characters are allowed.\n");
+                return;
+            }
             printf("Enter new last name: ");
             scanf("%s", contacts[i].lastName);
+            if (!isValidName(contacts[i].lastName)) {
+                printf("Invalid last name. Only alphabetic characters are allowed.\n");
+                return;
+            }
             printf("Enter new phone number: ");
             scanf("%s", contacts[i].phoneNumber);
+            if (!isValidPhoneNumber(contacts[i].phoneNumber)) {
+                printf("Invalid phone number. Only digits are allowed.\n");
+                return;
+            }
             printf("Contact updated.\n");
             return;
         }
@@ -111,8 +174,8 @@ int main() {
         printf("3. Update a contact\n");
         printf("4. Display all contacts\n");
         printf("5. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
+
+        choice = getValidChoice();
 
         switch (choice) {
             case 1:
