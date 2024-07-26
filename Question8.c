@@ -3,14 +3,14 @@
 
 int main(){
 
-    int n, closest_num;
+    int s, closest_num;
 
      printf("Please enter your number:");
-     scanf("%d" ,&n);
+     scanf("%d" ,&s);
      
 
-    if(n % 2 != 0){
-     closest_num = (int)sqrt(n) + 0.5;
+    if(s % 2 != 0){
+     closest_num = (int)sqrt(s) + 0.5;
      closest_num = closest_num * closest_num;
     }
     else{
