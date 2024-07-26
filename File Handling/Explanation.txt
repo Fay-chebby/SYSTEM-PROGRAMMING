@@ -1,0 +1,17 @@
+Header file: stdio.h provides functions for standard input/output, including file handling.
+File pointer: A variable of type FILE * points to a file.
+Opening a file: fopen() function opens a file and returns a file pointer.
+
+File modes:
+r: Open for reading.
+w: Open for writing (creates a new file or truncates an existing one).
+a: Open for appending (creates a new file if it doesn't exist).
+r+: Open for both reading and writing.
+w+: Open for both reading and writing (creates a new file or truncates an existing one).
+a+: Open for both reading and writing (appends to the file if it exists, otherwise creates it).
+
+
+Closing a file: fclose() closes a file.
+Reading from a file: fgetc(), fgets(), fscanf().
+Writing to a file: fputc(), fputs(), fprintf().
+File positioning: fseek(), ftell(), rewind().
