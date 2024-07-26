@@ -22,16 +22,26 @@ cat testfile.txt
 ls -l
 
 #change file permissions
-chmod 644 testfile.txt
+chmod 644 testfile.txt testfile1.txt
 
 #file backup
 cp testfile.txt testfile1.txt
 
+#change file permissions
+chmod 644 testfile1.txt
+
 #delete original file
 rm testfile.txt
 
-#move backup file to original file name
-mv testfile1.txt testfile.txt
+# Move the backup file to the original file name
+#mv testfile1.txt testfile.txt
+
+#move backup file out of directory
+mv testfile1.txt ../
 
 #display updated file list
 ls -l
+
+#saving the script to a file: nano file_handling.sh
+#making the script executable: chmod +x file_handling.sh
+#running the script: ./file_handling.sh
