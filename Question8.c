@@ -14,7 +14,7 @@ int main(){
      closest_num = closest_num * closest_num;
     }
     else{
-        closest_num = (int)sqrt(n + 1) + 0.5;
+        closest_num = (int)sqrt(s + 1) + 0.5;
         closest_num = closest_num * closest_num;
     }
 
